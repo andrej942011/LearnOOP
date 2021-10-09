@@ -8,16 +8,16 @@ namespace FormalNeuronDemo
 {
     struct LearnDate
     {
-        static int[][] x =
+        static int[][] x = //обучаемый вектор
         {
             new int[] {0,0,0,0},
             new int[] {0,0,0,1},
-            new int[] {1,1,1,0},
+            new int[] {1,1,1,1},//была ошибка
             new int[] {1,1,1,0},
             new int[] {1,1,1,1},
         };
 
-        static int[] y = { 0, 1, 1, 0, 1 };
+        static int[] y = { 0, 1, 1, 0, 1 }; //желаемое значение
 
         static int[][] test =
         {

@@ -8,9 +8,9 @@ namespace FormalNeuronDemo
 {
     class Neuron
     {
-        private double a = 0.02;
+        private double a = 0.02; //speed//если сделать 1 или 2, будет учиться неправильно
         private double b = -0.4;
-        private double[] w = { 0, 0, 0, 0 };
+        private double[] w = { 0, 0, 0, 0 }; //значение веса
         private int c = 0;
 
         public double[] W
@@ -38,7 +38,7 @@ namespace FormalNeuronDemo
             {
                 int y = Y[i++];
                 for (int j = 0; j < x.Length; j++)
-                    w[j] += a * (y - calculate(x)) * x[j];
+                    w[j] += a * (y - calculate(x)) * x[j]; //у - желаемое
             }
 
             return !Enumerable.SequenceEqual(w_, w);
@@ -48,7 +48,7 @@ namespace FormalNeuronDemo
         {
             double s = b;
             for (int i = 0; i < w.Length; i++)
-                s += w[i] * x[i];
+                s += w[i] * x[i]; //вес*вход
 
             return (s > 0) ? 1 : 0;
         }
